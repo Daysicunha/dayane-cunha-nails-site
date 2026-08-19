@@ -1,73 +1,16 @@
-Dayane Cunha Nails – Site Institucional
+# Dayane Cunha Nails
 
-Projeto desenvolvido como parte do desafio de HTML, com o objetivo de criar um site completo utilizando os principais conceitos da linguagem.
+Landing page estática em HTML, CSS e JavaScript para a Dayane Cunha Nails, em Sabará/MG.
 
-📌 Sobre o Projeto
+## Estrutura
 
-O Dayane Cunha Nails é um site institucional fictício para um salão de manicure e pedicure, desenvolvido com alguns conceitos em estruturação semântica, organização de conteúdo e boas práticas em HTML. Algumas tags originalmente utilizadas foram ajustadas devido à obsolescência, seguindo boas práticas atuais.
+- `index.html` — conteúdo, metadados e dados estruturados
+- `assets/css/style.css` — estilos responsivos
+- `assets/js/script.js` — interações e animações
+- `assets/img/` — imagens do projeto
+- `robots.txt` — diretrizes de rastreamento
+- `sitemap.xml` — mapa do site
 
-O projeto simula um ambiente real de apresentação de serviços, incluindo informações sobre atendimento, horários e contato com clientes.
+## Publicação
 
-🎯 Objetivo
-
-Aplicar na prática os seguintes conceitos:
-
-Estrutura básica de um site em HTML
-Semântica (uso correto das tags)
-Criação de múltiplas páginas
-Navegação entre páginas
-Formulários
-Tabelas
-Inserção de mídias
-Organização de layout com base em template
-
-🗂️ Estrutura do Projeto
-/dayane-cunha-nails-site
-│
-├── index.html
-├── sobre.html
-├── horario.html
-├── contato.html
-├── localizacao.html
-├── servicos.html
-├── README.md
-│
-└── assets/
-    ├── css/
-    │   └── style.css
-    └── img/
-        ├── banner1.png
-        ├── contatos.png
-        ├── endereco.png
-        ├── funcionamento.png
-        ├── logodayane.png
-        ├── servicos.png
-        └── sobre.png
-
-🛠️ Tecnologias Utilizadas
-HTML5
-CSS3 (básico)
-
-📚 Aprendizados
-
-Durante o desenvolvimento deste projeto, foram praticados:
-
-Estruturação de páginas web
-Organização de layout com menu lateral
-Uso de tabelas para exibição de dados
-Criação de formulários funcionais (estrutura)
-Separação de responsabilidades (HTML + CSS)
-
-🚀 Como Executar
-Baixe ou clone o repositório
-Abra o arquivo index.html no navegador
-
-📌 Observações
-
-Este projeto é estático e não possui integração com backend.
-O formulário de contato não envia dados, sendo apenas estrutural para fins de aprendizado.
-
-👩‍💻 Autora
-
-Daysiane Cunha
-Projeto desenvolvido para fins educacionais e prática em desenvolvimento web.
+Projeto preparado para deploy estático no Vercel. Antes de uma mudança de domínio, atualize `canonical`, Open Graph, `robots.txt` e `sitemap.xml` para a URL de produção.
