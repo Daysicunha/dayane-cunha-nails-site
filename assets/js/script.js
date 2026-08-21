@@ -134,20 +134,6 @@ gsap.utils.toArray(".gallery img").forEach(img => {
 });
 
 /* =========================================
-   BOTÃO WHATSAPP PULSO
-========================================= */
-const whatsappBtn = document.querySelector(".whatsapp");
-if (whatsappBtn) {
-    gsap.to(whatsappBtn, {
-        y: -8,
-        repeat: -1,
-        yoyo: true,
-        duration: 1.5,
-        ease: "power1.inOut"
-    });
-}
-
-/* =========================================
    LIGHTBOX PREMIUM (GALERIA)
 ========================================= */
 const galleryImages = document.querySelectorAll('.gallery img');

@@ -27,7 +27,7 @@
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": ["NailSalon", "BeautySalon"],
+        "@type": "NailSalon",
         "name": "Dayane Cunha Nails",
         "telephone": "+55 31 98213-3437",
         "address": {
@@ -36,7 +36,26 @@
             "addressLocality": "Sabará",
             "addressRegion": "MG",
             "addressCountry": "BR"
-        }
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "https://schema.org/Tuesday",
+                    "https://schema.org/Wednesday",
+                    "https://schema.org/Thursday",
+                    "https://schema.org/Friday"
+                ],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday",
+                "opens": "07:00",
+                "closes": "18:00"
+            }
+        ]
     }
     </script>
 </head>
@@ -46,7 +65,7 @@
     ========================================= -->
 <header class="header">
 <div class="logo">
-<img alt="Dayane Cunha Nails" decoding="async" height="1688" src="assets/img/logodayane.webp" width="3375"/>
+<img alt="Dayane Cunha Nails" decoding="async" height="800" src="assets/img/logodayane.webp" width="800"/>
 </div>
 <nav class="navbar">
 <ul class="nav-menu">
@@ -84,10 +103,10 @@
 <section class="hero">
 <div class="hero-content">
 <span class="hero-tag">
-                ✨ Atendimento com horário marcado
+                 Atendimento com horário marcado
             </span>
-<h1>Elegância, cuidado e unhas impecáveis em cada detalhe.</h1>
-<p>Mais do que uma manicure, uma experiência criada para elevar sua autoestima, seu bem-estar e sua beleza.</p>
+<h1>Manicure e pedicure com cuidado, técnica e acabamento impecável.</h1>
+<p>Atendimento personalizado, com materiais esterilizados e atenção aos detalhes para você se sentir bem cuidada do início ao fim.</p>
 <div class="hero-buttons">
 <a class="btn" href="https://wa.me/5531982133437" rel="noopener noreferrer" target="_blank">
                     Agendar Horário
@@ -119,7 +138,7 @@
 </div>
 </div>
 <div class="hero-image">
-<img alt="Manicure profissional Dayane Cunha" decoding="async" height="3375" src="assets/img/herodayane.webp" width="3375"/>
+<img alt="Manicure profissional Dayane Cunha" decoding="async" height="800" src="assets/img/herodayane.webp" width="1600"/>
 </div>
 </section>
 <!-- =========================================
@@ -127,7 +146,7 @@
     ========================================= -->
 <section class="section about-section" id="sobre">
 <div class="about-image">
-<img alt="Dayane Cunha manicure profissional" height="3375" loading="lazy" src="assets/img/dayane.webp" width="3375"/>
+<img alt="Dayane Cunha manicure profissional" height="800" loading="lazy" src="assets/img/dayane.webp" width="1600"/>
 </div>
 <div class="about-content">
 <span class="section-tag">SOBRE MIM</span>
@@ -145,9 +164,9 @@
     ========================================= -->
 <section class="experience">
 <div class="experience-container">
-<span class="section-tag">EXPERIÊNCIA PREMIUM</span>
+<span class="section-tag">CUIDADO EM CADA ETAPA</span>
 <h2>Um momento especial dedicado exclusivamente a você.</h2>
-<p>Cada atendimento é realizado com atenção aos detalhes, materiais esterilizados e foco total na qualidade do resultado.</p>
+<p>Cada atendimento é realizado com atenção aos detalhes, materiais esterilizados e foco na qualidade do resultado.</p>
 <p>Um ambiente acolhedor, confortável e preparado para tornar seu momento ainda mais especial.</p>
 </div>
 </section>
@@ -235,7 +254,7 @@
 <i class="ph-fill ph-instagram-logo"></i>
 <span class="section-tag light">INSTAGRAM</span>
 <h2>Acompanhe meu trabalho</h2>
-<p>Veja novidades, inspirações e trabalhos realizados diariamente.</p>
+<p>Veja trabalhos recentes, inspirações e novidades do meu atendimento.</p>
 <a class="btn btn-gold" href="https://instagram.com/dayanecunha_24" rel="noopener noreferrer" target="_blank">
                 @dayanecunha_24
             </a>
@@ -332,12 +351,8 @@
 <h3><i class="ph-fill ph-clock"></i> Horários</h3>
 <ul class="hours-list">
 <li>
-<span>Terça a Quinta</span>
-<span>07h30 às 18h00</span>
-</li>
-<li>
-<span>Sexta</span>
-<span class="closed">Fechado</span>
+<span>Terça a Sexta</span>
+<span>08h00 às 18h00</span>
 </li>
 <li>
 <span>Sábado</span>
@@ -369,7 +384,7 @@
 <footer class="footer">
 <div class="footer-container">
 <div class="footer-brand">
-<img alt="Dayane Cunha Nails" class="footer-logo-img" height="1688" src="assets/img/logodayane.webp" width="3375"/>
+<img alt="Dayane Cunha Nails" class="footer-logo-img" height="800" src="assets/img/logodayane.webp" width="800"/>
 <p class="footer-slogan">Atendimento personalizado, conforto e cuidado em cada detalhe.</p>
 </div>
 <div class="footer-contact">
@@ -387,8 +402,7 @@
 </div>
 <div class="footer-hours">
 <h4>Horários</h4>
-<p><i class="ph-fill ph-clock"></i> Terça a Quinta: 07h30 às 18h</p>
-<p><i class="ph-fill ph-clock"></i> Sexta: Fechado</p>
+<p><i class="ph-fill ph-clock"></i> Terça a Sexta: 08h às 18h</p>
 <p><i class="ph-fill ph-clock"></i> Sábado: 07h às 18h</p>
 </div>
 </div>
@@ -415,7 +429,7 @@
 <!-- =========================================
     WHATSAPP FLUTUANTE
     ========================================= -->
-<a class="whatsapp" href="https://wa.me/5531982133437" rel="noopener noreferrer" target="_blank">
+<a aria-label="Agendar pelo WhatsApp" class="whatsapp" href="https://wa.me/5531982133437" rel="noopener noreferrer" target="_blank">
 <i class="ph-fill ph-whatsapp-logo"></i>
 </a>
 <!-- =========================================
