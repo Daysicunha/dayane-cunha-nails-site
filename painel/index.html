@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Painel | AgendaFlow One</title>
+  <link rel="icon" href="/assets/img/favicon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/agendaflow-one.css">
+</head>
+<body data-page="panel">
+  <div class="preview-ribbon">Prévia • dados locais</div>
+  <div class="panel-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <img src="/assets/img/logodayane.webp" alt="Dayane Cunha Nails">
+        <div class="brand-copy"><small>AgendaFlow One</small><strong>Dayane Cunha Nails</strong></div>
+      </div>
+      <nav class="nav">
+        <button class="active" data-view="today"><span class="nav-icon">◉</span>Hoje</button>
+        <button data-view="agenda"><span class="nav-icon">▦</span>Agenda</button>
+        <button data-view="new"><span class="nav-icon">＋</span>Novo agendamento</button>
+        <button data-view="block"><span class="nav-icon">⊘</span>Bloquear horário</button>
+        <button data-view="services"><span class="nav-icon">◇</span>Serviços</button>
+        <button data-view="hours"><span class="nav-icon">◷</span>Horários</button>
+        <button data-view="clients"><span class="nav-icon">◎</span>Clientes</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-brand">Produto por <strong>AgendaFlow One</strong></div>
+        <button class="btn btn-small btn-soft" id="reset-preview" style="margin-top:12px;width:100%">Restaurar prévia</button>
+      </div>
+    </aside>
+
+    <div class="panel-main">
+      <header class="panel-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="icon-btn mobile-menu-btn" id="mobile-menu" aria-label="Abrir menu">☰</button>
+          <div class="panel-header-left"><small id="page-title-sub">Visão rápida dos atendimentos e horários livres.</small><strong id="page-title-text">Hoje</strong></div>
+        </div>
+        <div class="header-actions">
+          <a class="btn btn-small btn-outline" href="/agendar/" target="_blank">Abrir agenda pública ↗</a>
+          <div class="avatar">D</div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="view active" id="view-today">
+          <div class="page-title"><div><h1>Bom dia, Dayane.</h1><p id="today-date"></p></div><div class="quick-actions"><button class="btn btn-primary" data-go="new">＋ Novo agendamento</button><button class="btn btn-outline" data-go="block">Bloquear horário</button></div></div>
+          <div class="kpi-grid">
+            <div class="kpi"><div class="kpi-label">Atendimentos hoje</div><div class="kpi-value" id="kpi-appointments">0</div><div class="kpi-note">agendamentos ativos</div></div>
+            <div class="kpi"><div class="kpi-label">Clientes hoje</div><div class="kpi-value" id="kpi-clients">0</div><div class="kpi-note">clientes únicas</div></div>
+            <div class="kpi"><div class="kpi-label">Horários livres</div><div class="kpi-value" id="kpi-free">0</div><div class="kpi-note">base: manicure</div></div>
+            <div class="kpi"><div class="kpi-label">Valor previsto</div><div class="kpi-value" id="kpi-revenue">R$ 0</div><div class="kpi-note">apenas referência da agenda</div></div>
+          </div>
+          <div class="dashboard-grid">
+            <div class="card-panel"><div class="card-head"><div><h2>Próximos atendimentos</h2><p>Em ordem de horário.</p></div></div><div class="timeline" id="today-list"></div></div>
+            <div class="card-panel"><div class="card-head"><div><h2>Próximos horários livres</h2><p>Considerando manicure como referência.</p></div></div><div class="free-slots" id="free-list"></div></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-agenda">
+          <div class="page-title"><div><h1>Agenda</h1><p>Visualize atendimentos e bloqueios do dia.</p></div><button class="btn btn-primary" data-go="new">＋ Novo agendamento</button></div>
+          <div class="card-panel">
+            <div class="calendar-toolbar"><div><h2 id="agenda-day-label">Hoje</h2><p class="muted" style="margin:2px 0 0;font-size:.78rem">Agendamentos e indisponibilidades</p></div><div class="date-control"><input type="date" id="agenda-date"></div></div>
+            <div class="agenda-list" id="agenda-list"></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-new">
+          <div class="page-title"><div><h1>Novo agendamento</h1><p>Para clientes que marcaram fora da agenda online.</p></div></div>
+          <div class="card-panel" style="max-width:850px">
+            <div class="notice">A prévia já verifica disponibilidade e impede sobreposição com outros agendamentos e bloqueios salvos neste navegador.</div>
+            <form id="new-form" class="panel-form">
+              <div class="field"><label>Nome da cliente</label><input name="name" required placeholder="Nome completo"></div>
+              <div class="field"><label>WhatsApp</label><input name="phone" required inputmode="tel" placeholder="(31) 99999-9999"></div>
+              <div class="field"><label>Serviço</label><select name="service" id="new-service"></select></div>
+              <div class="field"><label>Data</label><input type="date" name="date" id="new-date" required></div>
+              <div class="field"><label>Horário disponível</label><select name="time" id="new-time" required></select></div>
+              <div class="form-actions"><button type="button" class="btn btn-outline" data-go="today">Cancelar</button><button class="btn btn-primary">Salvar agendamento</button></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="view" id="view-block">
+          <div class="page-title"><div><h1>Bloquear horário</h1><p>Almoço, médico, compromisso, folga ou qualquer indisponibilidade.</p></div></div>
+          <div class="card-panel" style="max-width:850px">
+            <form id="block-form" class="panel-form">
+              <div class="field"><label>Data</label><input type="date" name="date" id="block-date" required></div>
+              <div class="field"><label>Motivo</label><input name="reason" placeholder="Ex.: Almoço"></div>
+              <div class="field"><label>Início</label><input type="time" name="start" value="12:00" required></div>
+              <div class="field"><label>Fim</label><input type="time" name="end" value="13:00" required></div>
+              <div class="form-actions"><button type="button" class="btn btn-outline" data-go="today">Cancelar</button><button class="btn btn-primary">Bloquear horário</button></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="view" id="view-services">
+          <div class="page-title"><div><h1>Serviços</h1><p>Preço e duração ficam sob controle da Dayane.</p></div></div>
+          <div class="card-panel">
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Serviço</th><th>Preço (R$)</th><th>Duração (min)</th><th>Ativo</th><th></th></tr></thead><tbody id="services-body"></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-hours">
+          <div class="page-title"><div><h1>Horários de atendimento</h1><p>Defina quando a agenda pode oferecer horários.</p></div></div>
+          <div class="card-panel">
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Dia</th><th>Atende</th><th>Início</th><th>Fim</th><th></th></tr></thead><tbody id="hours-body"></tbody></table></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-clients">
+          <div class="page-title"><div><h1>Clientes</h1><p>Cadastro automático a partir dos agendamentos.</p></div></div>
+          <div class="card-panel">
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Cliente</th><th>WhatsApp</th><th>Último atendimento</th><th>Total agendado</th></tr></thead><tbody id="clients-body"></tbody></table></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/assets/js/agendaflow-one.js"></script>
+</body>
+</html>
